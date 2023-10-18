@@ -1,6 +1,6 @@
-package ExamenFilaA.ejercicio3.pages.todoLy;
+package selenium.pages.todoLy;
 
-import ExamenFilaA.ejercicio3.controls.Button;
+import selenium.controls.Button;
 import org.openqa.selenium.By;
 
 public class CentralSection {

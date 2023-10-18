@@ -26,7 +26,7 @@ public class NewUserProyectTest extends TestBase {
 
                 //create project
                 JSONObject bodyProject =new JSONObject();
-                bodyProject.put("Content","holaaaa);
+                bodyProject.put("Content","holaaaa");
 
                 this.createProject(bodyProject, post);
 

@@ -1,8 +1,8 @@
-package ExamenFilaA.ejercicio3.pages.todoist;
+package selenium.pages.todoist;
 
 import org.openqa.selenium.By;
-import ExamenFilaA.ejercicio3.controls.Button;
-import ExamenFilaA.ejercicio3.controls.TextBox;
+import selenium.controls.Button;
+import selenium.controls.TextBox;
 
 public class ChangePasswordSection {
 

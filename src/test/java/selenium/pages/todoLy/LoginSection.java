@@ -1,7 +1,7 @@
-package ExamenFilaA.ejercicio3.pages.todoLy;
+package selenium.pages.todoLy;
 
-import ExamenFilaA.ejercicio3.controls.Button;
-import ExamenFilaA.ejercicio3.controls.TextBox;
+import selenium.controls.Button;
+import selenium.controls.TextBox;
 import org.openqa.selenium.By;
 
 public class LoginSection {

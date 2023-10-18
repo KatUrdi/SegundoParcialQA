@@ -1,4 +1,4 @@
-package ExamenFilaA.ejercicio3.factoryBrowser;
+package selenium.factoryBrowser;
 
 public class FactoryBrowser {
 

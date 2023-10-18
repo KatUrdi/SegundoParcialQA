@@ -1,8 +1,7 @@
-package ExamenFilaA.ejercicio3.pages.todoist;
+package selenium.pages.todoist;
 
-import ExamenFilaA.ejercicio3.controls.Button;
-import ExamenFilaA.ejercicio3.controls.Label;
-import ExamenFilaA.ejercicio3.controls.TextBox;
+import selenium.controls.Button;
+import selenium.controls.Label;
 import org.openqa.selenium.By;
 
 public class CentralProjectSection {

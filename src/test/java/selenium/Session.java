@@ -1,4 +1,4 @@
-package ExamenFilaA.ejercicio3.singletonSession;
+package selenium;
 
 import selenium.factoryBrowser.FactoryBrowser;
 import org.openqa.selenium.WebDriver;

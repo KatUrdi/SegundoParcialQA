@@ -1,4 +1,4 @@
-package ExamenFilaA.ejercicio3.factoryBrowser;
+package selenium.factoryBrowser;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

@@ -1,4 +1,4 @@
-package ExamenFilaA.ejercicio3.controls;
+package selenium.controls;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;

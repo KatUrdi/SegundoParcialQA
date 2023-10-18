@@ -1,7 +1,7 @@
-package ExamenFilaA.ejercicio3.pages.todoist;
+package selenium.pages.todoist;
 
 import org.openqa.selenium.By;
-import ExamenFilaA.ejercicio3.controls.Button;
+import selenium.controls.Button;
 
 public class NavBarSection {
 
