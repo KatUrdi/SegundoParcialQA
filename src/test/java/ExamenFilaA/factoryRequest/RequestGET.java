@@ -1,11 +1,11 @@
-package clasesCRUDBasicAuth.factoryRequest;
+package ExamenFilaA.factoryRequest;
 
 import clasesCRUDBasicAuth.Configuration;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
 
-public class RequestDELETE implements IRequest {
+public class RequestGET implements IRequest {
     @Override
     public Response send(RequestInfo requestInfo) {
         Response response=given()
@@ -15,7 +15,7 @@ public class RequestDELETE implements IRequest {
                 .log()
                 .all().
                 when()
-                .delete(requestInfo.getUrl());
+                .get(requestInfo.getUrl());
         response.then().log().all();
         return response;
     }

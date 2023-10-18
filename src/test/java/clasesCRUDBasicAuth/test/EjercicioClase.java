@@ -2,8 +2,8 @@ package clasesCRUDBasicAuth.test;
 
 
 import clasesCRUDBasicAuth.Configuration;
-import clasesCRUDBasicAuth.factoryRequest.FactoryRequest;
-import clasesCRUDBasicAuth.factoryRequest.RequestInfo;
+import ExamenFilaA.factoryRequest.FactoryRequest;
+import ExamenFilaA.factoryRequest.RequestInfo;
 import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;

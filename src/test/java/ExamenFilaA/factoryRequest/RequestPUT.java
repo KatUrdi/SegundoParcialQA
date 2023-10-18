@@ -1,18 +1,22 @@
-package clasesCRUDBasicAuth.factoryRequest;
+package ExamenFilaA.factoryRequest;
 
+import clasesCRUDBasicAuth.Configuration;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
 
-public class RequestPOSTNoAuth implements IRequest {
+public class RequestPUT implements IRequest{
     @Override
     public Response send(RequestInfo requestInfo) {
         Response response=given()
+                .auth()
+                .preemptive()
+                .basic(Configuration.user, Configuration.password)
                 .body(requestInfo.getBody())
                 .log()
                 .all().
                 when()
-                .post(requestInfo.getUrl());
+                .put(requestInfo.getUrl());
         response.then().log().all();
         return response;
     }

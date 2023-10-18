@@ -1,11 +1,11 @@
-package clasesCRUDBasicAuth.factoryRequest;
+package ExamenFilaA.factoryRequest;
 
 import clasesCRUDBasicAuth.Configuration;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
 
-public class RequestPUT implements IRequest{
+public class RequestPOST implements IRequest {
     @Override
     public Response send(RequestInfo requestInfo) {
         Response response=given()
@@ -16,7 +16,7 @@ public class RequestPUT implements IRequest{
                 .log()
                 .all().
                 when()
-                .put(requestInfo.getUrl());
+                .post(requestInfo.getUrl());
         response.then().log().all();
         return response;
     }

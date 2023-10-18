@@ -1,7 +1,7 @@
 package clasesCRUDBasicAuth.test;
 
 import clasesCRUDBasicAuth.Configuration;
-import clasesCRUDBasicAuth.factoryRequest.FactoryRequest;
+import ExamenFilaA.factoryRequest.FactoryRequest;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 

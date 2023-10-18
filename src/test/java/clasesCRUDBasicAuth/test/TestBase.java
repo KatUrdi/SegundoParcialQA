@@ -1,6 +1,6 @@
 package clasesCRUDBasicAuth.test;
 
-import clasesCRUDBasicAuth.factoryRequest.RequestInfo;
+import ExamenFilaA.factoryRequest.RequestInfo;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
