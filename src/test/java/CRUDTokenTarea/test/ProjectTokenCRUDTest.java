@@ -1,17 +1,17 @@
-package tareaCRUDTOKEN.test;
+package CRUDTokenTarea.test;
 
 import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import tareaCRUDTOKEN.ConfigurationTOKEN;
-import tareaCRUDTOKEN.factoryRequestTOKEN.FactoryRequest;
-import tareaCRUDTOKEN.factoryRequestTOKEN.RequestInfo;
-import tareaCRUDTOKEN.requestTOKEN.RequestTOKEN;
+import CRUDTokenTarea.ConfigurationToken;
+import CRUDTokenTarea.factoryRequestTOKEN.FactoryRequest;
+import CRUDTokenTarea.factoryRequestTOKEN.RequestInfo;
+import CRUDTokenTarea.requestTOKEN.RequestTOKEN;
 
 import static org.hamcrest.Matchers.equalTo;
 
-public class CRUDProjectTokenTest {
+public class ProjectTokenCRUDTest {
 
     public String post ="post";
     public String put = "put";
@@ -41,7 +41,7 @@ public class CRUDProjectTokenTest {
     }
 
     private void createProject(JSONObject body, String post) {
-        requestInfo.setUrl(ConfigurationTOKEN.project_host + ".json")
+        requestInfo.setUrl(ConfigurationToken.project_host + ".json")
                 .setBody(body.toString());
         response = FactoryRequest.make(post).send(requestInfo);
         response.then().statusCode(200)
@@ -49,7 +49,7 @@ public class CRUDProjectTokenTest {
     }
 
     private void deleteProject(int idProject, String delete, JSONObject body) {
-        requestInfo.setUrl(ConfigurationTOKEN.project_host + "/" + idProject + ".json");
+        requestInfo.setUrl(ConfigurationToken.project_host + "/" + idProject + ".json");
         response = FactoryRequest.make(delete).send(requestInfo);
         response.then().statusCode(200).
                 body("Content", equalTo(body.get("Content")))
@@ -57,7 +57,7 @@ public class CRUDProjectTokenTest {
     }
 
     private void updateProject(int idProject, JSONObject body, String put) {
-        requestInfo.setUrl(ConfigurationTOKEN.project_host + "/" + idProject + ".json")
+        requestInfo.setUrl(ConfigurationToken.project_host + "/" + idProject + ".json")
                 .setBody(body.toString());
         response = FactoryRequest.make(put).send(requestInfo);
         response.then().statusCode(200).
@@ -65,7 +65,7 @@ public class CRUDProjectTokenTest {
     }
 
     private void readProject(int idProject, String get, JSONObject body) {
-        requestInfo.setUrl(ConfigurationTOKEN.project_host + "/" + idProject + ".json");
+        requestInfo.setUrl(ConfigurationToken.project_host + "/" + idProject + ".json");
         response = FactoryRequest.make(get).send(requestInfo);
         response.then().statusCode(200).
                 body("Id", equalTo(idProject));

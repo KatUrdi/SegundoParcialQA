@@ -1,4 +1,4 @@
-package tareaCRUDTOKEN.factoryRequestTOKEN;
+package CRUDTokenTarea.factoryRequestTOKEN;
 
 import io.restassured.response.Response;
 

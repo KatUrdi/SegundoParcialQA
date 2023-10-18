@@ -1,8 +1,8 @@
-package tareaCRUDTOKEN.requestTOKEN;
+package CRUDTokenTarea.requestTOKEN;
 
 
 import io.restassured.response.Response;
-import tareaCRUDTOKEN.ConfigurationTOKEN;
+import CRUDTokenTarea.ConfigurationToken;
 
 import static io.restassured.RestAssured.given;
 
@@ -15,11 +15,11 @@ public class RequestTOKEN {
         Response response=given()
                 .auth()
                 .preemptive()
-                .basic(ConfigurationTOKEN.user, ConfigurationTOKEN.password)
+                .basic(ConfigurationToken.user, ConfigurationToken.password)
                 .log()
                 .all().
                 when()
-                .get(ConfigurationTOKEN.authenticationToken);
+                .get(ConfigurationToken.authenticationToken);
 
         token = response.then().extract().path("TokenString");
     }

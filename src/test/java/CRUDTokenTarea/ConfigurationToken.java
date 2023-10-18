@@ -1,6 +1,6 @@
-package tareaCRUDTOKEN;
+package CRUDTokenTarea;
 
-public class ConfigurationTOKEN {
+public class ConfigurationToken {
     public static String user="katurdininea02@gmail.com";
     public static String password="kat123";
 
