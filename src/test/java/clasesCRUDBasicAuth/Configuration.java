@@ -10,4 +10,5 @@ public class Configuration {
     public static String item_host="https://todo.ly/api/items";
 
     public static String user_host="https://todo.ly/api/user";
+    public static String project_host;
 }

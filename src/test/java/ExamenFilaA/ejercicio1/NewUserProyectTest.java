@@ -1,44 +1,77 @@
 package ExamenFilaA.ejercicio1;
 
-import ExamenFilaA.factoryRequest.RequestInfo;
-import io.restassured.response.Response;
+import ExamenFilaA.factoryRequest.FactoryRequest;
+import clasesCRUDBasicAuth.Configuration;
+import clasesCRUDBasicAuth.test.TestBase;
 import org.json.JSONObject;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import java.util.Random;
 
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Hashtable;
-import java.util.Properties;
 
-public class NewUserProyectTest {
+import static org.hamcrest.Matchers.equalTo;
 
-    RequestInfo requestInfo = new RequestInfo();
-    Response response;
+public class NewUserProyectTest extends TestBase {
 
-    String auth;
-    JSONObject proyectBody = new JSONObject();
-    JSONObject userbody = new JSONObject();
 
-    @BeforeEach
-    public void setup(){
-        userbody.put("FullName", "Katzumi Urdininea");
-        userbody.put("Email", "katurdininea02@gmail.com");
-        userbody.put("Password","kat123");
-        proyectBody.put("Content", "Holaaa segundo parcial" + LocalTime.now().format(DateTimeFormatter.ofPattern("HHmmss")));
-
-    }
-
+    static Random rand = new Random();
     @Test
-    public void verifyUserProjectTest() {
-        requestInfo.setHost(Properties.host + "api/user.json").setBody(userBody.toString());
-        response = factoryRequest.make("post").send(requestInfo);
-        response.then().log().all().statusCode(200)
-                .body("Email", equalTo(userBody.get("Email")))
-                .body("FullName", equalTo(userBody.get("FullName")));
+    public void UserProjectDeleteUserotherProject(){
+                //create user
+                JSONObject body = new JSONObject();
+                body.put("Email", Configuration.user);
+                body.put("Fullname", "Katzumi Urdininea");
+                body.put("Password", Configuration.password);
+
+                this.createUser(Configuration.user_host + ".json", body, post);
+
+                //create project
+                JSONObject bodyProject =new JSONObject();
+                bodyProject.put("Content","holaaaa);
+
+                this.createProject(bodyProject, post);
+
+                //delete user
+                this.deleteUser(body);
 
 
+                //c project fail
+                bodyProject.put("Content", "holiiiii");
+                this.createProjectFail(bodyProject, post);
 
 
-    }
-}
+            }
+
+
+            private void createUser(String host, JSONObject body, String post) {
+                requestInfo.setUrl(host).setBody(body.toString());
+                response = FactoryRequest.make(post).send(requestInfo);
+                response.then().statusCode(200).body("FullName", equalTo(body.get("FullName"))).body("Email", equalTo(body.get("Email")));
+
+            }
+            private void createProject(JSONObject body, String post) {
+                requestInfo.setUrl(Configuration.host+".json").setBody(body.toString());
+                response = FactoryRequest.make(post).send(requestInfo);
+                response.then().statusCode(200).body("Content", equalTo(body.get("Content")));
+
+            }
+
+            private void deleteUser(JSONObject body) {
+                requestInfo.setUrl(Configuration.user_host+"https://todo.ly/api/user/0.json").setBody(body.toString());
+                response = FactoryRequest.make(delete).send(requestInfo);
+                response.then().statusCode(200).
+                        body("FullName", equalTo(body.get("FullName"))).
+                        body("Email", equalTo(body.get("Email")));
+            }
+
+            private void createProjectFail(JSONObject body, String post) {
+                requestInfo.setUrl(Configuration.project_host+".json")
+                        .setBody(body.toString());
+                response = FactoryRequest.make(post).send(requestInfo);
+                response.then().statusCode(200)
+                        .body("ErrorMessage", equalTo("Account doesnt exist"));
+            }
+
+
+        }
+
+
