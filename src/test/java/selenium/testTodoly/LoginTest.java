@@ -4,10 +4,10 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import selenium.pagesTodoLy.LoginSection;
-import selenium.pagesTodoLy.MainPage;
-import selenium.pagesTodoLy.MenuSection;
-import selenium.session.Session;
+import ExamenFilaA.ejercicio3.pagesTodoLy.LoginSection;
+import ExamenFilaA.ejercicio3.pagesTodoLy.MainPage;
+import ExamenFilaA.ejercicio3.pagesTodoLy.MenuSection;
+import ExamenFilaA.ejercicio3.session.Session;
 
 public class LoginTest {
 

@@ -1,10 +1,11 @@
-package selenium.control;
+package ExamenFilaA.ejercicio3.controls;
 
 import org.openqa.selenium.By;
 
-public class Button extends Control{
-
+public class Button extends ControlBase{
     public Button(By locator) {
         super(locator);
     }
+
+
 }

@@ -1,11 +1,11 @@
 package selenium.testTodoly;
 
 import org.junit.jupiter.api.*;
-import selenium.pagesTodoLy.LoginSection;
-import selenium.pagesTodoLy.MainPage;
-import selenium.pagesTodoLy.MenuSection;
-import selenium.pagesTodoLy.SettingsPopUp;
-import selenium.session.Session;
+import ExamenFilaA.ejercicio3.pagesTodoLy.LoginSection;
+import ExamenFilaA.ejercicio3.pagesTodoLy.MainPage;
+import ExamenFilaA.ejercicio3.pagesTodoLy.MenuSection;
+import ExamenFilaA.ejercicio3.pagesTodoLy.SettingsPopUp;
+import ExamenFilaA.ejercicio3.session.Session;
 
 import java.util.Random;
 
